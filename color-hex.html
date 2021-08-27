@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts -->
+    <!-- fontawesome css -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="assets/sass/style.css">
+
+    <title>Color Flipper</title>
+</head>
+<body>
+
+    <!-- main content -->
+
+    <header>
+        <div class="container">
+            <div class="header-item">
+                <div class="header-logo">
+                    <h6>Color Flipper</h6>
+                </div>
+                <div class="header-menu">
+                    <ul class="menulist">
+                        <li>
+                            <a href="color-flipper.html">Simple</a>
+                        </li>
+                        <li>
+                            <a href="color-hex.html" class="active">Hex</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="section-wrapper">
+                <h2>
+                    Background Color :
+                    <span class="color">#ffff</span>
+                </h2>
+                <button type="button" class="btn" id="hexBtn"><span>Click Me</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- main content -->
+    
+
+    <!-- optional js -->
+    <script src="assets/js/vendors.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/function.js"></script>
+
+    <script>
+        const hexColor = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+
+        const hexButton = document.getElementById('hexBtn');
+
+        const color = document.querySelector('.color')
+
+        hexButton.addEventListener('click', function() {
+            // get radom
+            let hex = '#';
+
+            for (let i = 0; i < 6; i++) {
+                hex += hexColor[getRandomNumber()]
+            }
+
+            color.textContent = hex;
+            document.body.style.backgroundColor = hex;
+
+        })
+
+        function getRandomNumber () {
+            return Math.floor(Math.random()*hexColor.length)
+        }
+    </script>
+
+</body>
+</html>

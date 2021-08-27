@@ -1,0 +1,164 @@
+//?==== Color Flipper css start =====?//
+header {
+    border-bottom: 1px solid #f1f1ff;
+    .header-item {
+        @extend %flex;
+        padding: 10px 0;
+        align-items: center;
+        .header-logo {
+            text-align: center;
+            width: 50%;
+            border-right: 1px solid #f1f1ff;
+            h6 {
+                margin: 0;
+                color: $theme-color;
+                text-transform: uppercase;
+            }
+        }
+        .header-menu {
+            text-align: center;
+            width: calc(100% - 50%);
+            ul.menulist {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                @extend %flex;
+                align-items: center;
+                justify-content: center;
+                li {
+                    a {
+                        margin: 5px 10px;
+                        text-decoration: none;
+                        &.active {
+                            color: $theme-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-content {
+    padding: 60px 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .section-header {
+        position: relative;
+        margin-bottom: 16px;
+        h3 {
+            margin: 0;
+            font-weight: 600;
+        }
+        &::after {
+            @extend %absolute;
+            bottom: 0;
+            left: 50%;
+            width: 100px;
+            height: 4px;
+            background: $theme-color;
+            transform: translateX(-50%);
+        }
+    }
+    .section-wrapper {
+        margin: 0 auto;
+        text-align: center;
+        max-width: 500px;
+        h2 {
+            margin: 0;
+            padding: 5px;
+            text-align: center;
+            color: $white-color;
+            background: #000;
+            border-radius: 10px;
+            span {
+                display: block;
+                font-size: 24px;
+                letter-spacing: 1.5px;
+            }
+        }
+        span#value {
+            color: #000;
+            font-size: 48px;
+            font-weight: 700;
+        }
+        button.btn {
+            margin-top: 40px;
+        }
+        .card {
+            padding: 20px;
+            @extend %shadow;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 10px;
+            background: $white-color;
+            .card-thumb {
+                height: 100px;
+                width: 100px;
+                margin: 0 auto;
+                position: relative;
+                img {
+                    height: 100px;
+                    width: 100px;
+                    position: relative;
+                    z-index: 1;
+                    border-radius: 100%;
+                }
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background: $theme-color;
+                    top: -0.25rem;
+                    right: -0.5rem;
+                    border-radius: 50%;
+                }
+                &::after {
+                    position: absolute;
+                    content: "\f10e";
+                    top: 0;
+                    left: 0;
+                    height: 40px;
+                    width: 40px;
+                    line-height: 40px;
+                    border-radius: 100%;
+                    font-weight: 900;
+                    color: #fff;
+                    z-index: 111;
+                    font-family: 'Font Awesome 5 Free';
+                    background: $theme-color;
+                }
+               
+            }
+            .card-text {
+                .text-title {
+                    h4 {
+                        margin: 0;
+                    }
+                    span {
+                        font-size: 15px;
+                        color: $theme-color;
+                        text-transform: uppercase;
+                    }
+                }
+                .text-des {
+                    p {
+                        margin: 0 auto;
+                        font-size: 14px;
+                        max-width: 300px;
+                    }
+                }
+                .button-container {
+                    button {
+                        margin: 5px 10px;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+//?==== Color Flipper css ends  =====?//

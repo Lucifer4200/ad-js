@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts -->
+    <!-- fontawesome css -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="assets/sass/style.css">
+
+    <title>Color Flipper</title>
+</head>
+<body>
+
+    <!-- main content -->
+
+    <header>
+        <div class="container">
+            <div class="header-item">
+                <div class="header-logo">
+                    <h6>Color Flipper</h6>
+                </div>
+                <div class="header-menu">
+                    <ul class="menulist">
+                        <li>
+                            <a href="color-flipper.html" class="active">Simple</a>
+                        </li>
+                        <li>
+                            <a href="color-hex.html">Hex</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="section-wrapper">
+                <h2>
+                    Background Color :
+                    <span class="color">#ffff</span>
+                </h2>
+                <button type="button" class="btn" id="frippleBtn"><span>Click Me</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- main content -->
+    
+
+    <!-- optional js -->
+    <script src="assets/js/vendors.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/function.js"></script>
+
+    <script>
+         const colors = ['skyblue', 'green', 'red', '#f16c54b8', 'rgba(239, 239, 239, 0.5)'];
+
+        const fripBtn = document.getElementById('frippleBtn');
+
+        const color = document.querySelector('.color');
+
+        fripBtn.addEventListener('click', function(){
+            // Get random number between 0-3 changeing colors
+            const randomNumber = getRandomNum();
+            console.log(randomNumber)
+            document.body.style.backgroundColor = colors[randomNumber];
+            color.textContent = colors[randomNumber];
+        })
+
+        function getRandomNum () {
+            return Math.floor(Math.random()*colors.length);
+        }
+    </script>
+
+</body>
+</html>
